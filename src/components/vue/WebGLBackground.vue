@@ -244,7 +244,7 @@ const panelOpen = ref(false);
 const scenarios = {
   default: {
     colors: ["#3bffbd", "#8a0000", "#ffd400", "#ff3300"], // Matched from screenshot swatches
-    colorWeights: [0.6, 0.52], // Teal Weight, Warm Weight
+    colorWeights: [0.3, 0.33], // Teal Weight, Warm Weight
   },
   dark: {
     colors: ["#37ffbc", "#940a03", "#dfa006", "#ff3d00"],
@@ -265,21 +265,21 @@ const scenarios = {
  * and are heavily manipulated by the debug panel GUI.
  */
 const ctrl = reactive({
-  blendAmount: 0.36,
+  blendAmount: 0.18,
   colors: [...scenarios.default.colors],
   colorWeights: [...scenarios.default.colorWeights],
-  maskSoftness: 0.93,
-  coldEdgeBleed: 0.31,
-  warmEdgeBleed: 0.31,
-  internalBlend: 0.5,
-  hotspotBlend: 0.5,
-  colorCurve: 1.0,
-  seed: 42,
+  maskSoftness: 0.66,
+  coldEdgeBleed: 0.66,
+  warmEdgeBleed: 0.81,
+  internalBlend: 0.39,
+  hotspotBlend: 0.41,
+  colorCurve: 0.97,
+  seed: 19,
   waveAmplitude: 3.34,
-  waveAngle: -98,
-  waveFreqX: 0.2,
-  waveFreqY: 4.3,
-  waveSpeed: 1.57,
+  waveAngle: -26,
+  waveFreqX: 0.20,
+  waveFreqY: 4.00,
+  waveSpeed: 1.76,
   scenario: "default",
 });
 
