@@ -254,6 +254,11 @@ watch(
     pulse = 0;
   }
 );
+
+watch(ctrl, () => {
+  syncColors();
+}, { deep: true });
+
 let gl = null;
 let glowProgram = null;
 let blurProgram = null;
@@ -869,9 +874,6 @@ function frame(now) {
   const w = el.clientWidth;
   const h = el.clientHeight;
 
-  // Live-sync colors from debug panel
-  syncColors();
-
   // Always fully active
   const easedAmount = 1.0;
 
@@ -988,6 +990,7 @@ onMounted(() => {
   resize();
   if (initGL(canvasRef.value)) {
     rebuildFBOs();
+    syncColors();
     startTime = performance.now();
     lastFrameTime = 0;
     pulse = 0;

@@ -25,10 +25,9 @@ export function useAnimationStore() {
   };
 
   const setCustomState = (key: string, value: any) => {
-    customStates.value = {
-      ...customStates.value,
-      [key]: value,
-    };
+    if (customStates.value[key] !== value) {
+      customStates.value[key] = value;
+    }
   };
 
   const getCustomState = <T>(key: string, defaultValue?: T): T | undefined => {
